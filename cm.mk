@@ -20,6 +20,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
 
+# Use aeroevan's prebuilt stuff for now
+PRODUCT_COPY_FILES += \
+    device/htc/vivow/audio.primary.msm7x30.so:system/lib/hw/audio.primary.msm7x30.so \
+    device/htc/vivow/gps.vivow.so:system/lib/hw/gps.vivow.so
+
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
 PRODUCT_COPY_FILES += \
@@ -72,7 +77,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lights.vivow \
     sensors.vivow \
-    gps.vivow
+    audio.a2dp.default \
+    libaudioutils \
+    libtinyalsa
 
 # Keychars
 PRODUCT_COPY_FILES += \
@@ -101,7 +108,12 @@ PRODUCT_COPY_FILES += \
     device/htc/vivow/keylayout/vivow-keypad-ita.kl:system/usr/keylayout/vivow-keypad-ita.kl \
     device/htc/vivow/keylayout/vivow-keypad-tur.kl:system/usr/keylayout/vivow-keypad-tur.kl \
     device/htc/vivow/keylayout/vivow-keypad-wwe-bopomo.kl:system/usr/keylayout/vivow-keypad-wwe-bopomo.kl \
-    device/htc/vivow/keylayout/vivow-keypad-wwe.kl:system/usr/keylayout/vivow-keypad-wwe.kl
+    device/htc/vivow/keylayout/vivow-keypad-wwe.kl:system/usr/keylayout/vivow-keypad-wwe.kl \
+    device/htc/vivow/keylayout/atmel-touchscreen.kl:system/usr/keylayout/atmel-touchscreen.kl
+
+# Touchscreen
+PRODUCT_COPY_FILES += \
+    device/htc/vivow/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc
 
 # Firmware
 PRODUCT_COPY_FILES += \
@@ -176,8 +188,9 @@ PRODUCT_COPY_FILES += \
     device/htc/vivow/vold.fstab:system/etc/vold.fstab
 
 # media config xml file
-PRODUCT_COPY_FILES += \
-    device/htc/vivow/media_profiles.xml:system/etc/media_profiles.xml
+# This currently breaks mediaserver on boot, comment out for now
+#PRODUCT_COPY_FILES += \
+#    device/htc/vivow/media_profiles.xml:system/etc/media_profiles.xml
 
 # Kernel modules
 #PRODUCT_COPY_FILES += \
@@ -210,7 +223,7 @@ $(call inherit-product, device/htc/vivow/media_htcaudio.mk)
 
 $(call inherit-product-if-exists, vendor/htc/vivow/vivow-vendor.mk)
 
-PRODUCT_NAME := htc_vivow
+PRODUCT_NAME := cm_vivow
 PRODUCT_DEVICE := vivow
 PRODUCT_MODEL := HTC Incredible 2
 PRODUCT_MANUFACTURER := HTC

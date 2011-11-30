@@ -1,6 +1,10 @@
 #
 # system.prop for vivow
 #
+
+# Disable HW accel for now
+ro.config.disable_hw_accel=true
+
 ro.sf.lcd_density=240
 
 debug.fb.rgb565=0
@@ -28,6 +32,7 @@ ro.ril.wp.feature=1
 # Default network type.
 # 4 => CDMA mode preferred.
 ro.telephony.default_network=4
+ro.telephony.ril.v3=datacall
 
 # For Verizon data retry configuration
 ro.cdma.data_retry_config = max_retries=infinite,0,0,60000,120000,480000,900000
