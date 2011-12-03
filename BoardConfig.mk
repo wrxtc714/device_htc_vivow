@@ -31,6 +31,8 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/htc/vivow/BoardConfigVendor.mk
 
+BOARD_USES_LEGACY_TOUCHSCREEN := true
+
 TARGET_BOOTLOADER_BOARD_NAME := vivow
 
 # Use stock libril for now
