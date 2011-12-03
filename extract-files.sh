@@ -74,7 +74,7 @@ PRODUCT_COPY_FILES += \\
 
 # All the blobs necessary for vivow
 PRODUCT_COPY_FILES += \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary//akmd:/system/bin/akmd \\
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/akmd:/system/bin/akmd \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/awb_camera:/system/bin/awb_camera \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/bma150_usr:/system/bin/bma150_usr \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/dmagent:/system/bin/dmagent \\
