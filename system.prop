@@ -3,7 +3,7 @@
 #
 
 # Disable HW accel for now
-ro.config.disable_hw_accel=true
+#ro.config.disable_hw_accel=true
 
 ro.sf.lcd_density=240
 
