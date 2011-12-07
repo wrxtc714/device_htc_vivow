@@ -189,7 +189,7 @@ PRODUCT_COPY_FILES += \
 
 # media config xml file
 # This currently breaks mediaserver on boot, comment out for now
-# PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
 #    device/htc/vivow/media_profiles.xml:system/etc/media_profiles.xml
 
 # Kernel modules
