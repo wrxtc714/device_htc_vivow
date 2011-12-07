@@ -6,6 +6,13 @@ on early-init
     # for backwards compatibility
     symlink /mnt/sdcard /sdcard
 
+    export PHONE_STORAGE /mnt/emmc
+    mkdir /mnt/emmc 0000 system system
+    symlink /mnt/emmc /emmc
+
+    export USB_STORAGE /mnt/usb_storage
+    mkdir /mnt/usb_storage 0000 system system
+
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
     mkdir /data/radio 0770 radio radio
