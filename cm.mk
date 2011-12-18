@@ -77,6 +77,8 @@ PRODUCT_PACKAGES += \
     sensors.vivow \
     audio.a2dp.default \
     audio.primary.msm7x30 \
+    hwcomposer.default \
+    hwcomposer.msm7x30 \
     gps.vivow \
     libaudioutils \
     libtinyalsa
