@@ -27,6 +27,7 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
 
 PRODUCT_COPY_FILES += \
     device/htc/vivow/init.vivow.rc:root/init.vivow.rc \
+    device/htc/vivow/init.vivow.usb.rc:root/init.vivow.usb.rc \
     device/htc/vivow/ueventd.vivow.rc:root/ueventd.vivow.rc
 
 PRODUCT_COPY_FILES += \
